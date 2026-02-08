@@ -34,7 +34,7 @@ The project uses Docker Compose to manage infrastructure dependencies (PostgreSQ
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/TicketFlow.git
+   git clone https://github.com/edibesad/TicketFlow.git
    cd TicketFlow
    ```
 
@@ -105,7 +105,7 @@ Proje, altyapı bağımlılıklarını (PostgreSQL & Redis) yönetmek için Dock
 
 1. **Projeyi İndirin**
    ```bash
-   git clone https://github.com/kullanici-adiniz/TicketFlow.git
+   git clone https://github.com/edibesad/TicketFlow.git
    cd TicketFlow
    ```
 
