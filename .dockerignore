@@ -1,0 +1,9 @@
+**/.dockerignore
+**/.env
+**/bin
+**/obj
+**/TestResults
+.git
+docker-compose*
+README.md
+LICENSE

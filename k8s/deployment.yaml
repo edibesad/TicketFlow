@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ticketflow-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ticketflow
+  template:
+    metadata:
+      labels:
+        app: ticketflow
+    spec:
+      containers:
+      - name: ticketflow
+        image: ticketflow:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ConnectionStrings__DefaultConnection
+          value: "Host=postgres-service;Database=ticketflow;Username=admin;Password=password123"
+        - name: ConnectionStrings__Redis
+          value: "redis-service:6379"
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ticketflow-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ticketflow
+  ports:
+  - port: 80
+    targetPort: 8080
